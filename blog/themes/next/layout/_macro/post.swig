@@ -278,8 +278,8 @@
             {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
               <a class="post-gallery-img fancybox"
                  href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="{{ url_for(photo) }}" itemprop="contentUrl"/>
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url" style="background-image:url({{ url_for(photo) }});">
+                <!-- <img src="{{ url_for(photo) }}" itemprop="contentUrl"/> // 这里注释掉了，改为上面的背景图片显示 -->
               </a>
             {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
           {% endfor %}
