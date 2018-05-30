@@ -270,25 +270,6 @@
     {#################}
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
-      {# Gallery support #}
-      {% if post.photos and post.photos.length %}
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          {% set COLUMN_NUMBER = 3 %}
-          {% for photo in post.photos %}
-            {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
-              <a class="post-gallery-img fancybox"
-                 href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url" style="background-image:url({{ url_for(photo) }});">
-                <!-- <img src="{{ url_for(photo) }}" itemprop="contentUrl"/> // 这里注释掉了，改为上面的背景图片显示 -->
-              </a>
-            {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
-          {% endfor %}
-
-          {# Append end tag for `post-gallery-row` when (photos size mod COLUMN_NUMBER) is less than COLUMN_NUMBER #}
-          {% if post.photos.length % COLUMN_NUMBER > 0 %}</div>{% endif %}
-        </div>
-      {% endif %}
-
       {% if is_index %}
         {% if post.description and theme.excerpt_description %}
           {{ post.description }}
@@ -312,6 +293,13 @@
           {% set content = post.content | striptags %}
           {{ content.substring(0, theme.auto_excerpt.length) }}
           {% if content.length > theme.auto_excerpt.length %}...{% endif %}
+
+          {% if post.image %}
+             <div class="out-img-topic">
+               <img src={{ post.image }} class="img-topic" />
+             </div>
+          {% endif %}
+
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#{{ __('post.more') }}{% endif %}" rel="contents">
@@ -327,6 +315,26 @@
           {% endif %}
         {% endif %}
       {% else %}
+
+      {# Gallery support #}
+      {% if post.photos and post.photos.length %}
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          {% set COLUMN_NUMBER = 3 %}
+          {% for photo in post.photos %}
+            {% if loop.index0 % COLUMN_NUMBER === 0 %}<div class="post-gallery-row">{% endif %}
+              <a class="post-gallery-img fancybox"
+                 href="{{ url_for(photo) }}" rel="gallery_{{ post._id }}"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url" style="background-image:url({{ url_for(photo) }});">
+                <!-- <img src="{{ url_for(photo) }}" itemprop="contentUrl"/> // 这里注释掉了，改为上面的背景图片显示 -->
+              </a>
+            {% if loop.index0 % COLUMN_NUMBER === 2 %}</div>{% endif %}
+          {% endfor %}
+
+          {# Append end tag for `post-gallery-row` when (photos size mod COLUMN_NUMBER) is less than COLUMN_NUMBER #}
+          {% if post.photos.length % COLUMN_NUMBER > 0 %}</div>{% endif %}
+        </div>
+      {% endif %}
+
         {{ post.content }}
       {% endif  %}
     </div>
