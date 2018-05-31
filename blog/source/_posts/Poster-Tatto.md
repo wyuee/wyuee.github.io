@@ -11,7 +11,7 @@ tags:
    - 平面设计
    - 作品
    - design
-categories: 海报
+categories: Poster
 image: /assets/Poster-Tatto/image_1.jpg
 photo:
    - /assets/Poster-Tatto/image_1.jpg
