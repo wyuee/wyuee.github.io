@@ -296,7 +296,9 @@
 
           {% if post.image %}
              <div class="out-img-topic">
-               <img src={{ post.image }} class="img-topic" />
+                <a href="{{ url_for(post.path) }}" >
+                  <img src={{ post.image }} class="img-topic" />
+                </a>
              </div>
           {% endif %}
 

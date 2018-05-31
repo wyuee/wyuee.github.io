@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://wyuee.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :category/:title.html
 permalink_defaults:
 
 # Directory
@@ -41,7 +41,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace:
   
 # Home page setting
@@ -54,7 +54,7 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: other
+default_category: others
 category_map:
 tag_map:
 
