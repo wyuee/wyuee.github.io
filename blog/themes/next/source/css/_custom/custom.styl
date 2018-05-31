@@ -3,9 +3,14 @@
 .posts-expand {
     padding-top: 0;
 }
-// post-block 宽度
-.post-block {
-  width: 930px;
+// 侧栏头像（圆形以及旋转效果）
+.site-author-image {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 100%;
+    transition: transform 1.0s ease-out;
+}
+.site-author-image img:hover {
+    transform: rotateZ(360deg);
 }
 // 首页文章预览图
 .img-topic {
@@ -68,19 +73,6 @@
 
   filter: none;
 }
-//.posts-expand .post-body .fancybox img {
-//  margin: 0;
-//  width: 300px !important;
-//  // 让缩略图变黑白
-//  -webkit-filter: grayscale(100%);
-//  -moz-filter: grayscale(100%);
-//  -ms-filter: grayscale(100%);
-//  -o-filter: grayscale(100%);
-//
-//  filter: grayscale(100%);
-//
-//  filter: gray;
-//}
 
 // fancybox 打开图片后，去除边框
 .fancybox-skin {
@@ -89,4 +81,8 @@
 // 去除 fancybox 打开图片后的灰底
 .fancybox-overlay {
   //background: none !important;
+}
+// footer
+.post-footer .post-eof {
+  width: 50%;
 }

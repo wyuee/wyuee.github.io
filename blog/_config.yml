@@ -6,9 +6,10 @@
 title: Y
 subtitle: C'est la vie
 description: 弱鸡设计
-keywords: design, ui, gui
+keywords: design, ui, gui, 设计, ui设计
 author: wyuee
-language: zh-Hans
+#language: zh-Hans
+language:
 timezone:
 
 # URL
@@ -83,3 +84,11 @@ deploy:
   type: git
   repo: git@github.com:wyuee/wyuee.github.io.git
   branch: master
+
+# hexo-tag-cloud
+tag_cloud:
+#  textFont: Trebuchet MS, Helvetica
+  textFont: 微软雅黑
+  textColour: \#ccc
+  textHeight: 20
+  outlineColour: \#999999
