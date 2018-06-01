@@ -34,17 +34,7 @@
                 {{ _p('counter.tag_cloud', site.tags.length) }}
             </div>
             <div class="tag-cloud-tags">
-              {% if site.tags.length > 1 %}
-                <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
-                <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
-                <div class="widget-wrap">
-                    <div id="myCanvasContainer" class="widget tagcloud">
-                        <canvas width="500" height="250" id="resCanvas" style="width=100%">
-                            {{ list_tags() }}
-                        </canvas>
-                    </div>
-                </div>
-              {% endif %}
+              {{ tagcloud({min_font: 12, max_font: 12, amount: 1000, color: true, start_color: '#111', end_color: '#111'}) }}
             </div>
           </div>
         {% elif page.type === 'categories' %}
