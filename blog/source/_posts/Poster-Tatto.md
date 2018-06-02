@@ -12,6 +12,16 @@ tags:
    - 作品
    - design
 categories: Poster
+keywords:
+   - Poster Tatto
+   - Poster
+   - Tatto
+   - 海报
+   - 纹身
+   - 设计
+   - 平面设计
+   - 作品
+   - design
 image: /assets/Poster-Tatto/image_1.jpg
 photo:
    - /assets/Poster-Tatto/image_1.jpg

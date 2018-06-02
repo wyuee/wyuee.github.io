@@ -9,6 +9,13 @@ tags:
    - 软件
    - 首页
 categories: Banner
+keywords:
+   - APP
+   - UI
+   - Home page
+   - 应用
+   - 软件
+   - 首页
 image: /assets/APP-UI/image_1.jpg
 photo:
    - /assets/APP-UI/image_2.jpg
